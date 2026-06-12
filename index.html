@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkata Ram Sagar Konagandla — Petroleum Engineering &amp; Geomechanics Researcher</title>
+<meta name="description" content="Venkata Ram Sagar Konagandla — petroleum engineer researching carbonate geomechanics, digital rock physics, and machine learning for geoscience, transitioning into CO₂ storage (CCS) research.">
+<style>
+  :root {
+    --ink: #1c2733;
+    --body: #3d4a59;
+    --muted: #6b7a8c;
+    --accent: #0e5a6d;        /* deep teal — academic, calm */
+    --accent-light: #eaf4f6;
+    --gold: #b07d2b;
+    --bg: #fdfcfa;
+    --card: #ffffff;
+    --border: #e3e7ec;
+    --radius: 10px;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--body); font-family: var(--sans); line-height: 1.7; font-size: 16.5px; }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(253,252,250,0.95); backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  nav .brand { font-family: var(--serif); font-weight: 700; color: var(--ink); text-decoration: none; font-size: 1.02rem; }
+  nav .links a {
+    color: var(--muted); text-decoration: none; font-size: 0.9rem; margin-left: 22px;
+    padding-bottom: 3px; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s;
+  }
+  nav .links a:hover { color: var(--accent); border-color: var(--accent); }
+  @media (max-width: 640px) { nav .links a { margin-left: 13px; font-size: 0.8rem; } }
+
+  /* ===== HERO ===== */
+  header.hero { padding: 72px 0 56px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #f6f9fa 0%, var(--bg) 100%); }
+  .hero-grid { display: flex; gap: 40px; align-items: center; }
+  @media (max-width: 700px) { .hero-grid { flex-direction: column-reverse; text-align: center; } }
+  .hero-text { flex: 1; }
+  h1 { font-family: var(--serif); color: var(--ink); font-size: clamp(1.9rem, 4.5vw, 2.6rem); line-height: 1.2; margin-bottom: 14px; }
+  .hero-text .role { color: var(--accent); font-weight: 600; font-size: 1.05rem; margin-bottom: 16px; }
+  .hero-text p.lede { color: var(--body); max-width: 560px; }
+  @media (max-width: 700px) { .hero-text p.lede { margin: 0 auto; } }
+  .hero-meta { margin-top: 20px; color: var(--muted); font-size: 0.92rem; }
+  .profile-links { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+  @media (max-width: 700px) { .profile-links { justify-content: center; } }
+  .profile-links a, .profile-links span.pending {
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1px solid var(--border); border-radius: 99px;
+    padding: 7px 16px; font-size: 0.88rem; text-decoration: none;
+    color: var(--accent); background: var(--card); transition: border-color .15s, background .15s;
+  }
+  .profile-links a:hover { border-color: var(--accent); background: var(--accent-light); }
+  .profile-links span.pending { color: #b3a06a; border-style: dashed; cursor: default; }
+  .headshot {
+    width: 175px; height: 175px; border-radius: 50%; flex-shrink: 0;
+    border: 4px solid #fff; box-shadow: 0 4px 18px rgba(28,39,51,0.12);
+    object-fit: cover; background: var(--accent-light);
+  }
+  .headshot.placeholder {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    color: var(--muted); font-size: 0.8rem; border: 2px dashed #b9c6cc; padding: 14px;
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 56px 0 8px; }
+  h2 {
+    font-family: var(--serif); color: var(--ink); font-size: 1.55rem; margin-bottom: 6px;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .section-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 26px; }
+
+  /* ===== RESEARCH ===== */
+  .research-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px 32px; margin-bottom: 18px; box-shadow: 0 1px 4px rgba(28,39,51,0.04);
+  }
+  .research-card h3 { font-family: var(--serif); color: var(--ink); font-size: 1.18rem; margin-bottom: 4px; }
+  .research-card .status { color: var(--gold); font-size: 0.84rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
+  .research-card p { margin-bottom: 12px; }
+  .research-card p:last-child { margin-bottom: 0; }
+
+  .fig-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin: 20px 0 8px; }
+  .fig-grid figure.wide { grid-column: 1 / -1; }
+  .fig-grid figure {
+    background: #f4f7f8; border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 12px; margin: 0;
+  }
+  .fig-grid img { width: 100%; border-radius: 6px; display: block; background: #fff; }
+  figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .fig-credit { font-size: 0.8rem; color: var(--muted); margin-top: 10px; font-style: italic; }
+  .pipeline {
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; align-items: center;
+    font-size: 0.85rem; color: var(--ink);
+  }
+  .pipeline span.step {
+    background: var(--accent-light); border: 1px solid #d3e5e9; border-radius: 99px; padding: 4px 13px;
+  }
+  .pipeline span.arr { color: var(--accent); font-weight: 700; }
+
+  .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px; }
+  .interest {
+    background: var(--accent-light); border-radius: var(--radius); padding: 16px 20px;
+    font-size: 0.93rem; color: var(--ink); border: 1px solid #d3e5e9;
+  }
+  .interest strong { display: block; color: var(--accent); margin-bottom: 3px; font-size: 0.97rem; }
+
+  /* ===== PUBLICATIONS ===== */
+  .pub {
+    border-left: 3px solid var(--accent); background: var(--card);
+    border-radius: 0 var(--radius) var(--radius) 0; border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 20px 26px; margin-bottom: 14px;
+  }
+  .pub .title { color: var(--ink); font-weight: 600; font-size: 1.02rem; }
+  .pub .authors { font-size: 0.92rem; color: var(--body); margin-top: 4px; }
+  .pub .authors b { color: var(--ink); }
+  .pub .venue { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-top: 3px; }
+  .pub a.doi {
+    display: inline-block; margin-top: 8px; font-size: 0.85rem; color: var(--accent);
+    text-decoration: none; border: 1px solid var(--border); border-radius: 99px; padding: 3px 14px;
+  }
+  .pub a.doi:hover { background: var(--accent-light); border-color: var(--accent); }
+  .pub.prep { border-left-color: var(--gold); }
+  .pub.prep .badge-prep { font-size: 0.78rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; }
+
+  /* ===== EXPERIENCE ===== */
+  .xp { display: flex; gap: 22px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .xp:last-of-type { border-bottom: none; }
+  .xp .when { flex-shrink: 0; width: 158px; color: var(--muted); font-size: 0.88rem; padding-top: 3px; }
+  @media (max-width: 600px) { .xp { flex-direction: column; gap: 4px; } .xp .when { width: auto; } }
+  .xp h3 { color: var(--ink); font-size: 1.05rem; }
+  .xp .org { color: var(--accent); font-size: 0.93rem; font-weight: 600; margin-bottom: 6px; }
+  .xp ul { margin: 6px 0 0 18px; font-size: 0.94rem; }
+  .xp li { margin-bottom: 5px; }
+  .xp-photo { margin-top: 14px; max-width: 380px; }
+  .xp-photo img { width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(28,39,51,0.08); }
+  .xp-photo figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
+
+  /* ===== PROJECTS ===== */
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+  .proj {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px 22px; font-size: 0.93rem;
+  }
+  .proj h3 { color: var(--ink); font-size: 1rem; margin-bottom: 6px; }
+  .proj .tag { font-size: 0.75rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.7px; }
+  .proj.placeholder { border-style: dashed; color: var(--muted); background: #f7f9f9; }
+
+  /* ===== CONTACT ===== */
+  .contact-box {
+    background: var(--accent); color: #eaf4f6; border-radius: var(--radius);
+    padding: 36px 38px; margin: 14px 0 0; text-align: center;
+  }
+  .contact-box h2 { color: #fff; justify-content: center; }
+  .contact-box h2::after { display: none; }
+  .contact-box p { max-width: 560px; margin: 10px auto 20px; color: #d2e6ea; }
+  .contact-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 11px 26px; border-radius: 99px; text-decoration: none;
+    font-weight: 600; font-size: 0.95rem; transition: transform .12s, opacity .15s;
+  }
+  .btn:hover { transform: translateY(-1px); opacity: 0.93; }
+  .btn.primary { background: #fff; color: var(--accent); }
+  .btn.ghost { border: 1.5px solid #9cc4cc; color: #fff; }
+  .btn.pending { border: 1.5px dashed #9cc4cc; color: #bcd9df; cursor: default; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.84rem; padding: 38px 20px 46px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a class="brand" href="#top">V. R. S. Konagandla</a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Venkata Ram Sagar Konagandla</h1>
+      <div class="role">Petroleum Engineer · Carbonate Geomechanics &amp; Digital Rock Physics</div>
+      <p class="lede">
+        I study how carbonate rocks deform, fracture, and transmit fluids under reservoir stress —
+        combining triaxial experiments, µCT imaging and digital volume correlation with machine
+        learning for geoscience imagery. My research focus is moving toward geological
+        CO₂ storage (CCS), where the poro-mechanical behaviour of carbonates is a central open question.
+      </p>
+      <div class="hero-meta">B.S. Petroleum Engineering, Texas A&amp;M University at Qatar (2026) · Undergraduate Research Scholar · Doha, Qatar</div>
+      <div class="profile-links">
+        <a href="https://scholar.google.com/citations?user=TcBSt3UAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="mailto:kvramsagar31@gmail.com">Email</a>
+        <a href="https://github.com/ramsagaar" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0000-0003-4092-7663" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://www.linkedin.com/in/venkata-ramsagar-konagandla/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <img class="headshot" src="assets/headshot.jpg" alt="Venkata Ram Sagar Konagandla">
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ===== RESEARCH ===== -->
+  <section id="research">
+    <h2>Research</h2>
+    <p class="section-sub">Experimental rock deformation · digital rock physics · machine learning for geoscience</p>
+
+    <div class="research-card">
+      <h3>Experimental Rock Deformation and Digital Rock Physics Investigation of the Poro-Mechanical Evolution of Carbonate Rocks</h3>
+      <div class="status">B.S. Thesis — accepted · under embargo, public release forthcoming · journal manuscript in preparation</div>
+      <p>
+        Carbonate reservoirs host most of the Middle East's hydrocarbon resources — and are increasingly
+        candidates for CO₂ storage — yet how their pore structure, strength and permeability co-evolve
+        under changing stress is far less understood than for sandstones. My thesis addresses this gap
+        experimentally: I designed and executed triaxial compression experiments on carbonate cores with
+        stage-by-stage fluid-flow measurements, then used µCT imaging and digital volume correlation (DVC)
+        to map internal strain fields and link them to measured permeability changes under
+        reservoir-representative stress conditions.
+      </p>
+      <p>
+        Where most published work relies on uniaxial strain, sandstone lithologies, and bulk
+        measurements, this study applies true triaxial stress paths to carbonates and resolves what
+        happens <em>inside</em> the core: each sample is characterized by helium porosimetry and liquid
+        permeability testing, imaged by µCT before and after compression, analyzed with digital volume
+        correlation to map 3D displacement and strain localization, and finally meshed at the pore scale
+        for volume-of-fluid CFD simulation of oil–brine displacement through the deformed pore space.
+      </p>
+      <div class="pipeline">
+        <span class="step">Porosimetry &amp; permeability</span><span class="arr">→</span>
+        <span class="step">UCS &amp; triaxial compression</span><span class="arr">→</span>
+        <span class="step">Pre/post µCT imaging</span><span class="arr">→</span>
+        <span class="step">DVC strain mapping</span><span class="arr">→</span>
+        <span class="step">Pore-scale meshing</span><span class="arr">→</span>
+        <span class="step">Multiphase CFD</span>
+      </div>
+      <p>
+        The headline result: stress measurably alters porosity and permeability, preferential flow paths
+        reorganize after compression, and the experimental observations agree with the pore-scale
+        simulations — a quantitative experimental–digital link between deformation and flow that improves
+        reservoir prediction.
+      </p>
+      <p>
+        This work continues in collaboration with the Digital Rock Physics &amp; Geomechanics group at
+        TAMUQ (Dr.&nbsp;Thomas Seers, Dr.&nbsp;Mohamed Fadlelmula), extending the dataset to additional
+        carbonate lithologies and stress regimes toward a generalized poro-mechanical framework for
+        Middle East reservoir carbonates. The same questions — seal integrity, injection-induced stress
+        change, permeability evolution under load — are the core geomechanics problems of CO₂ storage,
+        which is the direction I am taking this research next.
+      </p>
+      <div class="fig-grid">
+        <figure class="wide">
+          <img src="assets/fig-uct-prepost.png" alt="µCT cross-sections of the carbonate core before and after compression">
+          <figcaption>µCT cross-sections of the carbonate core before (left) and after (right) triaxial compression, with registration markers — the raw input for digital volume correlation.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/fig-dvc-vectors.png" alt="DVC displacement vector field overlaid on the µCT volume">
+          <figcaption>DVC-derived 3D displacement field overlaid on the µCT volume, revealing internal deformation zones invisible to bulk measurements.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/fig-dvc-strain.png" alt="Volumetric strain field renderings from DVC analysis">
+          <figcaption>Volumetric strain fields from DVC analysis, localizing where the carbonate fabric accommodates stress.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/fig-pore-mesh.png" alt="Pore-scale mesh extracted from the µCT volume">
+          <figcaption>Pore-scale computational mesh of a vug network extracted from the µCT volume for CFD simulation.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/fig-cfd-invasion.png" alt="Volume-of-fluid CFD simulation of oil invading a brine-saturated vuggy limestone">
+          <figcaption>Volume-of-fluid CFD simulation of oil (red) invading brine-saturated (blue) vuggy Indiana Limestone, run on pre- and post-compression geometries.</figcaption>
+        </figure>
+      </div>
+      <p class="fig-credit">
+        Figures from the 2026 Undergraduate Research Scholars presentation, with team members
+        M.&nbsp;Bouhssas, M.&nbsp;Tayara, N.&nbsp;Yehya and M.&nbsp;Mansour.
+      </p>
+    </div>
+
+    <div class="interests">
+      <div class="interest"><strong>Geomechanics &amp; rock physics</strong> Triaxial testing, µCT imaging, DVC analysis, poro-mechanical characterization of carbonates</div>
+      <div class="interest"><strong>Machine learning for geoscience</strong> Fracture segmentation on outcrop imagery, automated petrographic classification of thin sections</div>
+      <div class="interest"><strong>Reservoir simulation</strong> Petrel modeling, Eclipse E100; building toward compositional CO₂ storage simulation (E300 / MRST co2lab)</div>
+      <div class="interest"><strong>CO₂ storage (CCS)</strong> Caprock &amp; seal integrity, injection-induced geomechanics, carbonate trapping behaviour</div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS ===== -->
+  <section id="publications">
+    <h2>Publications</h2>
+    <p class="section-sub">Full list on <a href="https://scholar.google.com/citations?user=TcBSt3UAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+
+    <div class="pub">
+      <div class="title">GeoCrack: A high-resolution dataset for segmentation of fracture edges in geological outcrops</div>
+      <div class="authors">M. Yaqoob, M. Ishaq, M. Y. Ansari, <b>V. R. S. Konagandla</b>, T. Al Tamimi, S. Tavani, A. Corradetti, T. D. Seers</div>
+      <div class="venue">Scientific Data (Nature Portfolio), 11, 1318 — 2024</div>
+      <a class="doi" href="https://doi.org/10.1038/s41597-024-04107-0" target="_blank" rel="noopener">doi:10.1038/s41597-024-04107-0</a>
+    </div>
+
+    <div class="pub">
+      <div class="title">Investigation of a Solid Particle Deposition Velocity in Drag Reducing Fluids with Salinity</div>
+      <div class="authors">O. Chinemerem, M. A. Rahman, <b>V. Konagandla</b>, R. Hasan</div>
+      <div class="venue">Proceedings of the 8th Thermal and Fluids Engineering Conference (TFEC), ASTFE — 2023</div>
+      <a class="doi" href="https://doi.org/10.1615/tfec2023.fnd.046104" target="_blank" rel="noopener">doi:10.1615/tfec2023.fnd.046104</a>
+    </div>
+
+    <div class="pub prep">
+      <span class="badge-prep">In preparation</span>
+      <div class="title">Journal manuscript on the poro-mechanical evolution of carbonate rocks (from B.S. thesis)</div>
+      <div class="authors"><b>V. R. S. Konagandla</b> et al.</div>
+      <div class="venue">Manuscript in preparation with the TAMUQ Digital Rock Physics &amp; Geomechanics group</div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="xp">
+      <div class="when">Sept 2023 – May 2026</div>
+      <div>
+        <h3>Undergraduate Research Assistant — Digital Rock Physics &amp; Geomechanics</h3>
+        <div class="org">Texas A&amp;M University at Qatar · Dr. Seers &amp; Dr. Fadlelmula</div>
+        <ul>
+          <li>Designed and executed triaxial compression experiments on carbonate cores with µCT/DVC analysis to quantify strain-field evolution and permeability change under stress.</li>
+          <li>Led ML dataset creation and model development for automated fault and fracture identification on outcrop imagery — published in <em>Scientific Data</em> (Nature Portfolio, 2024).</li>
+          <li>Developed an ML pipeline for lithology and sediment classification on thin-section imagery for automated petrographic characterization.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="xp">
+      <div class="when">Jun – Aug 2025</div>
+      <div>
+        <h3>MWD/LWD Operations Intern</h3>
+        <div class="org">Halliburton — Drilling &amp; Evaluation · Doha, Qatar</div>
+        <ul>
+          <li>Audited pre-deployment documentation for MWD/LWD tool crates, ensuring proof-of-readiness compliance and traceability before field dispatch.</li>
+          <li>Authored tool-failure reports synthesizing operational and maintenance records to support root-cause analysis.</li>
+          <li>Designed an automated tracking system for tool readiness status, reducing filing errors across multiple crate inventories.</li>
+        </ul>
+        <figure class="xp-photo">
+          <img src="assets/halliburton.jpg" alt="Receiving the internship certificate at Halliburton, Doha" loading="lazy">
+          <figcaption>Internship completion at Halliburton — Doha, Qatar (2025)</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="xp">
+      <div class="when">May 2021 – Nov 2022</div>
+      <div>
+        <h3>Undergraduate Research Assistant — Fluid Dynamics</h3>
+        <div class="org">Texas A&amp;M University at Qatar · Dr. Azizur Rahman</div>
+        <ul>
+          <li>Built and validated 3D geometry models in SolidWorks and ran ANSYS CFD simulations on particle settling behaviour; contributed to findings published at ASTFE TFEC 2023.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="xp">
+      <div class="when">May 2022 – Dec 2024</div>
+      <div>
+        <h3>President · Vice President · Secretary</h3>
+        <div class="org">Society of Petroleum Engineers — Flow Assurance Club, TAMUQ</div>
+        <ul>
+          <li>Organized lecture series, a sustainable-engineering showcase, and professional development events across three consecutive officer terms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="xp">
+      <div class="when">May – Oct 2024</div>
+      <div>
+        <h3>Instructor — Alternative Energy Design Optimization</h3>
+        <div class="org">HBKU Student Enrichment Cycle</div>
+        <ul>
+          <li>Delivered ANSYS simulation workshops and wind-energy optimization instruction to student cohorts at HBKU.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="section-sub">Open tools and analyses — repositories added as they are published.</p>
+    <div class="proj-grid">
+      <div class="proj">
+        <span class="tag">In testing</span>
+        <h3>Algorithmic trading agent — Indian equity markets</h3>
+        Co-developed automated trading agent covering market-data ingestion, signal generation, and trade-execution logic; currently validating strategy performance in live testing.
+      </div>
+      <div class="proj placeholder">
+        <span class="tag">Planned</span>
+        <h3>CO₂ plume simulation in a saline aquifer</h3>
+        Benchmark compositional CO₂ storage simulation with MRST co2lab — residual trapping in a saline aquifer.
+      </div>
+      <div class="proj placeholder">
+        <span class="tag">Planned</span>
+        <h3>Fault slip-tendency analysis tool</h3>
+        Mohr–Coulomb slip-tendency screening of faults under rising pore pressure, written from scratch in Python.
+      </div>
+      <div class="proj placeholder">
+        <span class="tag">Planned</span>
+        <h3>Decline curve analysis in Python</h3>
+        Arps exponential / hyperbolic / harmonic curve fitting on public production data with SciPy, with EUR estimation.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="contact-box">
+      <h2>Get in touch</h2>
+      <p>
+        I am currently preparing PhD applications in CO₂ storage geomechanics and am glad to discuss
+        research collaboration, my carbonate dataset, or graduate opportunities.
+      </p>
+      <div class="contact-actions">
+        <a class="btn primary" href="mailto:kvramsagar31@gmail.com">kvramsagar31@gmail.com</a>
+        <a class="btn ghost" href="assets/Venkata_Ramsagar_Konagandla_CV.pdf" download>Download CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Venkata Ram Sagar Konagandla · Doha, Qatar
+</footer>
+
+</body>
+</html>
